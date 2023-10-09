@@ -1,4 +1,9 @@
-public class lekcja1 {
+import dziedziczenie.Auto;
+import dziedziczenie.Jacht;
+import dziedziczenie.Pojazd;
+import dziedziczenie.Samolot;
+
+public class stare_lekcje {
     public static void main(String[] args) {
         //        System.out.println("Hello world!");
 
@@ -163,6 +168,62 @@ public class lekcja1 {
 //        }
 //    }
 //}
+
+
+//        LEKCJA 3 OBIEKTOWOSC, DZIEDZICZENIE, POLIMORFIZM
+//        import dziedziczenie.Auto;
+//import dziedziczenie.Jacht;
+//import dziedziczenie.Pojazd;
+//import dziedziczenie.Samolot;
+//
+//        public class Main {
+//            public static void main(String[] args) {
+////        String name = "Name";
+////        String name2 = new String(name);
+////        String name3 = name;
+////
+//////        == porownuje miejsce w pamieci
+////        System.out.println(name == name2);
+////
+//////        oba stringi maja ta sama wartosc ale to inne obiekty
+////        System.out.println(name2.equals(name));
+////
+//////        True, nie tworzymy nowego obiektu tylko dzialamy na tej samej pamieci
+////        System.out.println(name == name3);
+//
+//
+////        dziedziczenie.Auto obiektowosc
+////        dziedziczenie.Auto newAuto = new dziedziczenie.Auto();
+////
+////        newAuto.setBrand("Mercedes");
+////        newAuto.setColor("Czarny");
+////        newAuto.setModel("E klasa xd");
+////
+////        String brand = newAuto.getBrand();
+////        System.out.println(brand);
+////
+////
+////        System.out.println(newAuto);
+////
+////        newAuto.getInfo();
+//
+//                Auto newAuto = new Auto("Honda", "Civic");
+//                useMakeNoise(newAuto);
+//
+//                Samolot newSamolot = new Samolot("Boeing", "XXX");
+//                useMakeNoise(newSamolot);
+//
+//
+//                Jacht newJacht = new Jacht("xxx", "yyyy");
+//                useMakeNoise(newJacht);
+//
+//            }
+//
+//            public static void useMakeNoise(Pojazd pojazd) {
+//                pojazd.makeNoise();
+//            }
+//        }
+
 
     }
 }
