@@ -15,7 +15,7 @@
 // - Nie musi zachowywac kolejnosci elementow
 
 // MAP
-// - cos jak dictonary, klucz-wartosc
+// - cos jak dictionary, klucz-wartosc
 // - klucze sa unikalne
 
 
