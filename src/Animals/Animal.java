@@ -11,6 +11,7 @@ public class Animal {
 //   Musi byc public static zeby wywolac w mainie
     public static List<Animal> animalsList = new ArrayList<>();
 //  List<Co dodajemy (String, Int, dany obiekt)> nazwaListy = new ArrayList<>();
+//  Na poczatku dajemy sama liste potem new rodzajlisty, np linked list czy cokolwiek innego
 
 
     public Animal(String race, String name) {
