@@ -18,25 +18,22 @@
 // - cos jak dictionary, klucz-wartosc
 // - klucze sa unikalne
 
-
-
 import Animals.Animal;
 import Animals.Doggo;
 import Animals.Cat;
 import Animals.AntEater;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
 
         Doggo szarik = new Doggo("Owczarek", "Szarik");
-        Cat mruczek = new Cat("Dachowiec", "Mruczek");
+        Cat mruczek = new Cat("Dachowiec", " Mruczek");
         AntEater kamil = new AntEater("Masz jakas mruwke?", "Kamil");
+        Doggo wilczur = new Doggo("Yorkshire terrier", "Wilczur");
 
-//      for (TypObiektu nazwaZmiennejDlaPetli : iterowalnyObiekt)
-//      esencjonalnie jest to jak for each
+
+//      for (TypObiektu nazwaZmiennejDlaPetli : list )
+//      jest to jak foreach
         for (Animal animal : Animal.animalsList) {
             useDisplayName(animal);
             useMakeNoise(animal);
