@@ -1,59 +1,36 @@
-// LIST:
-// - Interfejs, on jest tylko baselinem i potem mozna go uzyc jako arraylista itp
-// - Dynamiczny, moze na biezaco zmieniac swoja wielkosc
-// ArrayList - dynamiczny, szybki dostep ale wolniejsza modyfikacja (wszyskto musi sie w pamieci przesunac)
-// LInkedList - dynamiczny, kazdy element ma referencje do tego przed nim i za nim, wolniejszy dostep
+import order.Pozycja;
+import order.Zamowienie;
+import java.io.IOException;
 
-// ARRAY:
-// - Szybki dostep do elementow, elementy sa przechowywane w jednym miejscu w pamieci
-// - Jeden typ zmiennych
-// - Deklaruje sie ilosc elementow ktorej potem nie mozna zmienic
-// - Array to cos innego niz ArrayList
-
-// SET
-// - Nie akceptuje duplikatow
-// - Nie musi zachowywac kolejnosci elementow
-
-// MAP
-// - cos jak dictonary, klucz-wartosc
-// - klucze sa unikalne
-
-
-
-import Animals.Animal;
-import Animals.Doggo;
-import Animals.Cat;
-import Animals.AntEater;
-
-import java.util.ArrayList;
-import java.util.List;
+//todo: tostring format lepszy, 4. 5. 6.
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Pozycja p1 = new Pozycja("Chleb", 1, 3.5);
+        System.out.println(p1);
+        Pozycja p2 = new Pozycja("Cukier", 3, 4);
+        System.out.print(p2);
 
-        Doggo szarik = new Doggo("Owczarek", "Szarik");
-        Cat mruczek = new Cat("Dachowiec", "Mruczek");
-        AntEater kamil = new AntEater("Masz jakas mruwke?", "Kamil");
+        Zamowienie z = new Zamowienie(20);
+        z.dodajPozycje(p1);
+        z.dodajPozycje(p2);
 
-//      for (TypObiektu nazwaZmiennejDlaPetli : iterowalnyObiekt)
-//      esencjonalnie jest to jak for each
-        for (Animal animal : Animal.animalsList) {
-            useDisplayName(animal);
-            useMakeNoise(animal);
-        }
+//      Sprawdzenie 2.1
+//        z.usunPozycje(0);
 
-//        List<String> test = new ArrayList<>();
-//        test.add("essa");
-//        for (String q : test) {
-//            System.out.println(q);
-//        }
-    }
+//      Sprawdzenie 2.2
+//        z.edytujPozycje(0);
 
-    public static void useMakeNoise(Animal animal) {
-        animal.makeNoise();
-    }
 
-    public static void useDisplayName(Animal animal) {
-        animal.displayName();
+//      Sprawdzenie 2.3
+//        Pozycja p3 = new Pozycja("Cukier", 2, 4);
+//        z.dodajPozycje(p3);
+
+//      Sprawdzenie 3
+//        Pozycja p3 = new Pozycja("Cukier", 21, 4);
+//        z.dodajPozycje(p3);
+
+
+        System.out.println(z);
     }
 }
