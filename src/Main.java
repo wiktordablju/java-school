@@ -16,7 +16,7 @@ public class Main {
         z.dodajPozycje(p2);
 
 //      Sprawdzenie 2.1
-//        z.usunPozycje(0);
+        z.usunPozycje(0);
 
 //      Sprawdzenie 2.2
 //        z.edytujPozycje(0);
@@ -27,10 +27,15 @@ public class Main {
 //        z.dodajPozycje(p3);
 
 //      Sprawdzenie 3
-//        Pozycja p3 = new Pozycja("Cukier", 21, 4);
-//        z.dodajPozycje(p3);
+        Pozycja p3 = new Pozycja("Cukier", 21, 4);
+        z.dodajPozycje(p3);
 
 
         System.out.println(z);
+//        Sprawdzenie zapisywania
+        z.zapiszZamowienie(z, "zamowienie.txt");
+
+//        Sprawdzenie wczytywania
+        z.wczytajZamowienie("test.txt");
     }
 }
