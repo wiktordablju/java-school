@@ -1,20 +1,23 @@
 package order;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
-public class Zamowienie {
+public class Zamowienie implements Interfejs{
     public List<Pozycja> pozycje = new ArrayList<>();
-
     public static List<String> nazwyPozycji = new ArrayList<>();
-
     int ileDodanych;
     int maksRozmiar;
 
+
     public Zamowienie() {
         this.maksRozmiar = 10;
-
     }
 
     public Zamowienie(int ileDodanych) {
@@ -38,12 +41,17 @@ public class Zamowienie {
 
     double obliczWartosc() {
         double wartosc = 0;
+        double rabaty = 0;
         for(Pozycja p : pozycje) {
             wartosc += p.obliczWartosc();
-
+            rabaty += p.wartoscPozycji * (p.rabat / 100.0);
         }
 
-        return wartosc;
+
+        System.out.println("\nŁączna wartość rabatów: " + rabaty + " zł");
+        System.out.println("Łączna wartość zamówienia po uwzględnieniu rabatów: " + (wartosc - rabaty) + " zł");
+
+        return wartosc - rabaty;
     }
 
     public void usunPozycje(int indeks) {
@@ -81,7 +89,8 @@ public class Zamowienie {
         }
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         String result = "\n\nZamówienie: \n";
 
         for (Pozycja p : pozycje) {
@@ -90,5 +99,27 @@ public class Zamowienie {
 
         result += "\nRazem: " + obliczWartosc() + "zł";
         return result;
+    }
+
+    @Override
+    public void zapiszZamowienie(Zamowienie z, String nazwaPliku) throws IOException {
+        try (FileWriter writer = new FileWriter(nazwaPliku)) {
+            writer.write(z.toString());
+        } catch (IOException e) {
+            throw e;
+        }
+    }
+
+
+    public void wczytajZamowienie(String nazwaPliku) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(nazwaPliku))) {
+            String line;
+            System.out.println("Zawartość pliku:");
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
