@@ -15,20 +15,20 @@ public class Main {
         z.dodajPozycje(p2);
 
 //      Sprawdzenie 2.1
-        z.usunPozycje(0);
+//        z.usunPozycje(0);
 
 //      Sprawdzenie 2.2
-        z.edytujPozycje(0);
+//        z.edytujPozycje(0);
 
 //      Sprawdzenie 2.3 i  3
-        Pozycja p3 = new Pozycja("Cukier", 21, 4);
+        Pozycja p3 = new Pozycja("Cukier", 23, 4);
         z.dodajPozycje(p3);
 
 //        Sprawdzenie zapisywania
-        z.zapiszZamowienie(z, "zamowienie.txt");
+//        z.zapiszZamowienie(z, "zamowienie.txt");
 
 //        Sprawdzenie wczytywania
-        z.wczytajZamowienie("test.txt");
+//        z.wczytajZamowienie("test.txt");
 
         System.out.println(z);
 

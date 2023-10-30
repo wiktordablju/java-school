@@ -45,7 +45,7 @@ public class Zamowienie implements Interfejs{
             rabaty += p.wartoscPozycji * (p.rabat / 100.0);
         }
 
-        System.out.println("\nŁączna wartość rabatów: " + rabaty + " zł");
+        System.out.println("\n\nŁączna wartość rabatów: " + rabaty + " zł");
         System.out.println("Łączna wartość zamówienia po uwzględnieniu rabatów: " + (wartosc - rabaty) + " zł");
 
         return wartosc - rabaty;
@@ -88,26 +88,23 @@ public class Zamowienie implements Interfejs{
 
     @Override
     public String toString() {
-        String result = "\n\nZamówienie: \n";
+        String result = "\nZamówienie: \n";
 
         for (Pozycja p : pozycje) {
-            result += p + "\n";  // Nie obliczamy tu wartości pozycji, ponieważ jest to już robione w klasie Pozycja
+            result += p + "\n";  // Nie obliczamy tu w artości pozycji, ponieważ jest to już robione w klasie Pozycja
         }
 
         result += "\nRazem: " + obliczWartosc() + "zł";
         return result;
     }
-
     @Override
     public void zapiszZamowienie(Zamowienie z, String nazwaPliku) throws IOException {
         try (FileWriter writer = new FileWriter(nazwaPliku)) {
             writer.write(z.toString());
-        } catch (IOException e) {
-            throw e;
         }
     }
 
-
+    @Override
     public void wczytajZamowienie(String nazwaPliku) {
         try (BufferedReader reader = new BufferedReader(new FileReader(nazwaPliku))) {
             String line;
