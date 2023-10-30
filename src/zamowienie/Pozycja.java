@@ -1,11 +1,10 @@
-package order;
+package zamowienie;
 
 public class Pozycja {
     String nazwaTowaru;
     int ileSztuk;
     double cena;
     double wartoscPozycji;
-
     public double rabat;
 
     public Pozycja(String nazwaTowaru, int ileSztuk, double cena) {

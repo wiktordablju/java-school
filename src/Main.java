@@ -1,8 +1,7 @@
-import order.Pozycja;
-import order.Zamowienie;
-import java.io.IOException;
+import zamowienie.Pozycja;
+import zamowienie.Zamowienie;
 
-//todo: tostring format lepszy, 4. 5. 6.
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -19,23 +18,19 @@ public class Main {
         z.usunPozycje(0);
 
 //      Sprawdzenie 2.2
-//        z.edytujPozycje(0);
+        z.edytujPozycje(0);
 
-
-//      Sprawdzenie 2.3
-//        Pozycja p3 = new Pozycja("Cukier", 2, 4);
-//        z.dodajPozycje(p3);
-
-//      Sprawdzenie 3
+//      Sprawdzenie 2.3 i  3
         Pozycja p3 = new Pozycja("Cukier", 21, 4);
         z.dodajPozycje(p3);
 
-
-        System.out.println(z);
 //        Sprawdzenie zapisywania
         z.zapiszZamowienie(z, "zamowienie.txt");
 
 //        Sprawdzenie wczytywania
         z.wczytajZamowienie("test.txt");
+
+        System.out.println(z);
+
     }
 }

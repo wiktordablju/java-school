@@ -1,4 +1,4 @@
-package order;
+package zamowienie;
 
 import java.io.IOException;
 

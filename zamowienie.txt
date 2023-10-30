@@ -1,6 +1,7 @@
 
 
 Zamówienie: 
+Chleb 3.5zł 1szt. 3.5zł
 Cukier 4.0zł 24szt. 81.6zł
 
-Razem: 67.19999999999999zł
+Razem: 70.69999999999999zł

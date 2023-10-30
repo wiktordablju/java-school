@@ -1,8 +1,7 @@
-package order;
+package zamowienie;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,7 +10,6 @@ import java.io.FileReader;
 
 public class Zamowienie implements Interfejs{
     public List<Pozycja> pozycje = new ArrayList<>();
-    public static List<String> nazwyPozycji = new ArrayList<>();
     int ileDodanych;
     int maksRozmiar;
 
@@ -46,7 +44,6 @@ public class Zamowienie implements Interfejs{
             wartosc += p.obliczWartosc();
             rabaty += p.wartoscPozycji * (p.rabat / 100.0);
         }
-
 
         System.out.println("\nŁączna wartość rabatów: " + rabaty + " zł");
         System.out.println("Łączna wartość zamówienia po uwzględnieniu rabatów: " + (wartosc - rabaty) + " zł");
@@ -114,7 +111,7 @@ public class Zamowienie implements Interfejs{
     public void wczytajZamowienie(String nazwaPliku) {
         try (BufferedReader reader = new BufferedReader(new FileReader(nazwaPliku))) {
             String line;
-            System.out.println("Zawartość pliku:");
+            System.out.println("\n\nZawartość pliku:");
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
